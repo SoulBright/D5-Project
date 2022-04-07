@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+{% load custom_filters %}
+
+{% block title %}
+Страница редактирования пользователя {{ authorUser }}
+{% endblock title %}
+
+{% block h1 %}Редактирование профиля{% endblock h1 %}
+<hr>
+{% block h1-description %}{% endblock h1-description %}
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <input class="btn btn-primary" type="submit" value="Редактировать профиль">
+</form>
+{% endblock content %}
